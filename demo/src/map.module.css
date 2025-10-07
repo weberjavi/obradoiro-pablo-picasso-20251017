@@ -1,0 +1,14 @@
+.mapContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapPopup {
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
