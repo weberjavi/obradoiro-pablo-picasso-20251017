@@ -38,7 +38,9 @@ jobs:
       run: |
         mkdir -p deploy
         cp -r demo/dist/* deploy/
-        cp -r slides deploy/
+        mkdir -p deploy/slides
+        cp -r slides/* deploy/slides/
+        touch deploy/.nojekyll
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
