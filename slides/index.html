@@ -3,14 +3,466 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <title>Big</title>
+  <title>Taller de Visualización de Datos Geoespaciales</title>
   <link href="big.css" rel="stylesheet" type="text/css" />
   <script src="big.js"></script>
+  <style>
+    .highlight { color: #2E86AB; }
+    .accent { color: #A23B72; }
+    .success { color: #F18F01; }
+    .code { font-family: 'Courier New', monospace; background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+    .slide-image { max-width: 80%; height: auto; margin: 20px 0; }
+    .two-column { display: flex; justify-content: space-between; }
+    .column { flex: 1; padding: 0 10px; }
+  </style>
 </head>
 <body class="light">
+  <!-- Title Slide -->
   <div>
-    Your presentation goes here
-    <notes>Speakers notes go here.</notes>
+    <h1>Visualización de Datos Geoespaciales</h1>
+    <h2>Aplicaciones y Principios de Diseño</h2>
+    <p><em>Taller para Egresados de la Escuela de Diseño</em></p>
+    <notes>¡Bienvenidos! Hoy exploraremos cómo la visualización de datos geoespaciales combina principios de diseño con información geográfica para crear historias visuales convincentes e informativas.</notes>
+  </div>
+
+  <!-- What is Geospatial Data? -->
+  <div>
+    <h1>¿Qué son los Datos Geoespaciales?</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Definición</h3>
+        <p>Datos que contienen <span class="highlight">información geográfica</span> o atributos basados en ubicación</p>
+        <ul>
+          <li>Coordenadas (lat/lng)</li>
+          <li>Direcciones</li>
+          <li>Límites administrativos</li>
+          <li>Características geográficas</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Ejemplos</h3>
+        <ul>
+          <li>Coordenadas GPS</li>
+          <li>Códigos postales</li>
+          <li>Límites de ciudades</li>
+          <li>Rutas de transporte</li>
+          <li>Datos meteorológicos</li>
+          <li>Densidad poblacional</li>
+        </ul>
+      </div>
+    </div>
+    <notes>Los datos geoespaciales están en todas partes - desde el GPS de tu teléfono hasta los datos del censo. Son datos que tienen un componente espacial, lo que significa que pueden ser mapeados y visualizados geográficamente.</notes>
+  </div>
+
+  <!-- Why Visualize Geospatial Data? -->
+  <div>
+    <h1>¿Por qué Visualizar Datos Geoespaciales?</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Percepción Humana</h3>
+        <ul>
+          <li>Somos seres <span class="highlight">espacialmente conscientes</span></li>
+          <li>Los mapas son intuitivos de entender</li>
+          <li>Los patrones emergen visualmente</li>
+          <li>El contexto es inmediatamente claro</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Beneficios del Diseño</h3>
+        <ul>
+          <li>Contar historias convincentes</li>
+          <li>Revelar patrones ocultos</li>
+          <li>Apoyar la toma de decisiones</li>
+          <li>Comprometer audiencias</li>
+        </ul>
+      </div>
+    </div>
+    <notes>Los mapas aprovechan nuestra inteligencia espacial natural. Nos ayudan a entender relaciones, patrones y contexto que sería difícil de captar solo con tablas o gráficos.</notes>
+  </div>
+
+  <!-- Types of Geospatial Visualizations -->
+  <div>
+    <h1>Tipos de Visualizaciones Geoespaciales</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Mapas de Puntos</h3>
+        <p>Ubicaciones individuales marcadas con símbolos</p>
+        <ul>
+          <li>Ubicaciones de restaurantes</li>
+          <li>Lugares de eventos</li>
+          <li>Reportes de incidentes</li>
+        </ul>
+        
+        <h3>Mapas Coropléticos</h3>
+        <p>Áreas coloreadas según valores de datos</p>
+        <ul>
+          <li>Densidad poblacional</li>
+          <li>Resultados electorales</li>
+          <li>Niveles de ingresos</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Mapas de Flujo</h3>
+        <p>Movimiento entre ubicaciones</p>
+        <ul>
+          <li>Patrones de migración</li>
+          <li>Rutas comerciales</li>
+          <li>Flujos de transporte</li>
+        </ul>
+        
+        <h3>Mapas de Calor</h3>
+        <p>Visualización de densidad</p>
+        <ul>
+          <li>Puntos calientes de delincuencia</li>
+          <li>Patrones de tráfico</li>
+          <li>Actividad en redes sociales</li>
+        </ul>
+      </div>
+    </div>
+    <notes>Diferentes tipos de visualización sirven propósitos diferentes. Elige el tipo correcto basado en tus datos y la historia que quieres contar.</notes>
+  </div>
+
+  <!-- Design Principles -->
+  <div>
+    <h1>Principios de Diseño para Visualización Geoespacial</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Jerarquía Visual</h3>
+        <ul>
+          <li>Los datos más importantes primero</li>
+          <li>Usar tamaño, color y posición</li>
+          <li>Guiar el ojo naturalmente</li>
+        </ul>
+        
+        <h3>Teoría del Color</h3>
+        <ul>
+          <li>Paletas secuenciales vs. divergentes</li>
+          <li>Considerar accesibilidad para daltónicos</li>
+          <li>Asociaciones culturales del color</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Tipografía</h3>
+        <ul>
+          <li>Etiquetas claras y legibles</li>
+          <li>Jerarquía consistente</li>
+          <li>Tamaño apropiado</li>
+        </ul>
+        
+        <h3>Diseño de Interacción</h3>
+        <ul>
+          <li>Navegación intuitiva</li>
+          <li>Revelación progresiva</li>
+          <li>Indicadores claros</li>
+        </ul>
+      </div>
+    </div>
+    <notes>Los buenos principios de diseño son cruciales para una visualización geoespacial efectiva. El objetivo es hacer que los datos geográficos complejos sean accesibles y atractivos.</notes>
+  </div>
+
+  <!-- Tools & Technologies -->
+  <div>
+    <h1>Herramientas y Tecnologías</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Herramientas de Diseño</h3>
+        <ul>
+          <li><span class="code">Figma</span> - Mapeo vectorial</li>
+          <li><span class="code">Adobe Illustrator</span> - Diseño cartográfico</li>
+          <li><span class="code">QGIS</span> - SIG de código abierto</li>
+          <li><span class="code">ArcGIS</span> - SIG profesional</li>
+        </ul>
+        
+        <h3>Tecnologías Web</h3>
+        <ul>
+          <li><span class="code">D3.js</span> - Visualizaciones personalizadas</li>
+          <li><span class="code">Leaflet</span> - Mapas interactivos</li>
+          <li><span class="code">Mapbox</span> - Estilos de mapa personalizados</li>
+          <li><span class="code">Observable</span> - Cuadernos de datos</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Fuentes de Datos</h3>
+        <ul>
+          <li>OpenStreetMap</li>
+          <li>Conjuntos de datos gubernamentales</li>
+          <li>APIs (Google, Mapbox)</li>
+          <li>Imágenes satelitales</li>
+        </ul>
+        
+        <h3>Soluciones Sin Código</h3>
+        <ul>
+          <li><span class="code">Tableau</span> - Inteligencia de negocios</li>
+          <li><span class="code">Power BI</span> - Ecosistema Microsoft</li>
+          <li><span class="code">Carto</span> - Inteligencia de ubicación</li>
+          <li><span class="code">Datawrapper</span> - Gráficos rápidos</li>
+        </ul>
+      </div>
+    </div>
+    <notes>El panorama de herramientas es diverso. Elige basado en tus habilidades técnicas, requisitos del proyecto y necesidades de la audiencia. Muchas herramientas ahora ofrecen capacidades tanto de diseño como de desarrollo.</notes>
+  </div>
+
+  <!-- Real-World Applications -->
+  <div>
+    <h1>Aplicaciones del Mundo Real</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Planificación Urbana</h3>
+        <ul>
+          <li>Análisis de zonificación</li>
+          <li>Planificación de transporte</li>
+          <li>Distribución de espacios verdes</li>
+          <li>Asequibilidad de vivienda</li>
+        </ul>
+        
+        <h3>Inteligencia de Negocios</h3>
+        <ul>
+          <li>Análisis de mercado</li>
+          <li>Optimización de cadena de suministro</li>
+          <li>Segmentación de clientes</li>
+          <li>Marketing basado en ubicación</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Ambiental</h3>
+        <ul>
+          <li>Monitoreo del cambio climático</li>
+          <li>Seguimiento de deforestación</li>
+          <li>Mapeo de contaminación</li>
+          <li>Conservación de biodiversidad</li>
+        </ul>
+        
+        <h3>Impacto Social</h3>
+        <ul>
+          <li>Respuesta a desastres</li>
+          <li>Seguimiento de salud pública</li>
+          <li>Análisis de equidad social</li>
+          <li>Compromiso comunitario</li>
+        </ul>
+      </div>
+    </div>
+    <notes>La visualización geoespacial tiene aplicaciones en todas las industrias. No se trata solo de mapas - se trata de entender las relaciones espaciales en los datos para tomar mejores decisiones.</notes>
+  </div>
+
+  <!-- Design Process -->
+  <div>
+    <h1>Proceso de Diseño para Proyectos Geoespaciales</h1>
+    <ol>
+      <li><span class="highlight">Definir el problema</span> - ¿Qué historia estás contando?</li>
+      <li><span class="highlight">Recopilar datos</span> - Encontrar fuentes confiables y precisas</li>
+      <li><span class="highlight">Limpiar y preparar</span> - Asegurar calidad de datos</li>
+      <li><span class="highlight">Elegir tipo de visualización</span> - Hacer coincidir forma con función</li>
+      <li><span class="highlight">Diseñar la interfaz</span> - La experiencia de usuario importa</li>
+      <li><span class="highlight">Probar e iterar</span> - Obtener retroalimentación temprano</li>
+      <li><span class="highlight">Desplegar y mantener</span> - Mantenerlo actualizado</li>
+    </ol>
+    <notes>Como cualquier proyecto de diseño, la visualización geoespacial se beneficia de un proceso estructurado. La clave es entender a tu audiencia y la historia que quieres contar.</notes>
+  </div>
+
+  <!-- Common Pitfalls -->
+  <div>
+    <h1>Errores Comunes a Evitar</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Problemas de Datos</h3>
+        <ul>
+          <li>Mala calidad de datos</li>
+          <li>Proyecciones inapropiadas</li>
+          <li>Contexto faltante</li>
+          <li>Información desactualizada</li>
+        </ul>
+        
+        <h3>Problemas Visuales</h3>
+        <ul>
+          <li>Demasiada información</li>
+          <li>Malas elecciones de color</li>
+          <li>Estilo inconsistente</li>
+          <li>Leyendas poco claras</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Experiencia de Usuario</h3>
+        <ul>
+          <li>Navegación compleja</li>
+          <li>Tiempos de carga lentos</li>
+          <li>No amigable para móviles</li>
+          <li>Sin propósito claro</li>
+        </ul>
+        
+        <h3>Consideraciones Éticas</h3>
+        <ul>
+          <li>Preocupaciones de privacidad</li>
+          <li>Visualizaciones engañosas</li>
+          <li>Sesgo en recolección de datos</li>
+          <li>Barreras de accesibilidad</li>
+        </ul>
+      </div>
+    </div>
+    <notes>Ser consciente de los errores comunes te ayuda a crear mejores visualizaciones. Siempre considera a tu audiencia, la calidad de los datos y las implicaciones éticas.</notes>
+  </div>
+
+  <!-- Case Study -->
+  <div>
+    <h1>Caso de Estudio: Análisis de Isla de Calor Urbana</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Desafío</h3>
+        <p>Visualizar variaciones de temperatura en una ciudad para identificar efectos de isla de calor e informar decisiones de planificación urbana.</p>
+        
+        <h3>Fuentes de Datos</h3>
+        <ul>
+          <li>Imágenes térmicas satelitales</li>
+          <li>Datos de estaciones meteorológicas</li>
+          <li>Clasificaciones de uso del suelo</li>
+          <li>Densidad poblacional</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Solución</h3>
+        <ul>
+          <li>Superposición de mapa de calor interactivo</li>
+          <li>Visualización de lapso de tiempo</li>
+          <li>Correlación con uso del suelo</li>
+          <li>Recomendaciones de políticas</li>
+        </ul>
+        
+        <h3>Impacto</h3>
+        <p>Informó la planificación de espacios verdes y regulaciones de construcción para reducir los efectos del calor urbano.</p>
+      </div>
+    </div>
+    <notes>Este caso de estudio muestra cómo la visualización geoespacial puede abordar desafíos urbanos reales. La clave fue combinar múltiples fuentes de datos para contar una historia convincente.</notes>
+  </div>
+
+  <!-- Best Practices -->
+  <div>
+    <h1>Mejores Prácticas</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Calidad de Datos</h3>
+        <ul>
+          <li>Verificar precisión de datos</li>
+          <li>Verificar completitud</li>
+          <li>Entender limitaciones</li>
+          <li>Documentar fuentes</li>
+        </ul>
+        
+        <h3>Diseño Visual</h3>
+        <ul>
+          <li>Usar proyecciones apropiadas</li>
+          <li>Elegir colores significativos</li>
+          <li>Proporcionar leyendas claras</li>
+          <li>Probar en diferentes dispositivos</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Experiencia de Usuario</h3>
+        <ul>
+          <li>Empezar con vista general</li>
+          <li>Habilitar zoom y desplazamiento</li>
+          <li>Proporcionar búsqueda/filtro</li>
+          <li>Incluir exportación de datos</li>
+        </ul>
+        
+        <h3>Accesibilidad</h3>
+        <ul>
+          <li>Paletas amigables para daltónicos</li>
+          <li>Navegación por teclado</li>
+          <li>Soporte para lectores de pantalla</li>
+          <li>Opciones de alto contraste</li>
+        </ul>
+      </div>
+    </div>
+    <notes>Seguir las mejores prácticas asegura que tus visualizaciones no solo sean hermosas sino también funcionales, accesibles y confiables.</notes>
+  </div>
+
+  <!-- Future Trends -->
+  <div>
+    <h1>Tendencias Futuras en Visualización Geoespacial</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Tecnología</h3>
+        <ul>
+          <li><span class="accent">Visualización 3D</span> - Experiencias inmersivas</li>
+          <li><span class="accent">Integración AR/VR</span> - Computación espacial</li>
+          <li><span class="accent">Datos en tiempo real</span> - Actualizaciones en vivo</li>
+          <li><span class="accent">Insights impulsados por IA</span> - Reconocimiento de patrones</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Aplicaciones</h3>
+        <ul>
+          <li><span class="accent">Ciudades inteligentes</span> - Integración IoT</li>
+          <li><span class="accent">Adaptación climática</span> - Planificación de resiliencia</li>
+          <li><span class="accent">Mapas personalizados</span> - Experiencias individuales</li>
+          <li><span class="accent">Mapeo colaborativo</span> - Entrada comunitaria</li>
+        </ul>
+      </div>
+    </div>
+    <notes>El campo está evolucionando rápidamente con nuevas tecnologías y aplicaciones. Mantenerse actualizado con las tendencias te ayuda a crear visualizaciones de vanguardia.</notes>
+  </div>
+
+  <!-- Getting Started -->
+  <div>
+    <h1>Cómo Empezar</h1>
+    <div class="two-column">
+      <div class="column">
+        <h3>Recursos de Aprendizaje</h3>
+        <ul>
+          <li>Cursos en línea (Coursera, Udemy)</li>
+          <li>Documentación y tutoriales</li>
+          <li>Foros de la comunidad</li>
+          <li>Proyectos de código abierto</li>
+        </ul>
+        
+        <h3>Proyectos de Práctica</h3>
+        <ul>
+          <li>Mapea tu vecindario</li>
+          <li>Visualiza datos locales</li>
+          <li>Participa en hackathones</li>
+          <li>Contribuye al código abierto</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Herramientas para Probar</h3>
+        <ul>
+          <li><span class="code">Observable</span> - Comienza con D3</li>
+          <li><span class="code">Mapbox Studio</span> - Estilos personalizados</li>
+          <li><span class="code">QGIS</span> - Software SIG gratuito</li>
+          <li><span class="code">Figma</span> - Mockups de diseño</li>
+        </ul>
+        
+        <h3>Comunidad</h3>
+        <ul>
+          <li>NACIS (Cartografía)</li>
+          <li>FOSS4G (Código Abierto)</li>
+          <li>Meetups locales</li>
+          <li>Comunidades en línea</li>
+        </ul>
+      </div>
+    </div>
+    <notes>Comienza pequeño con proyectos personales y gradualmente construye tus habilidades. La comunidad geoespacial es acogedora y llena de recursos para aprender.</notes>
+  </div>
+
+  <!-- Q&A -->
+  <div>
+    <h1>Preguntas y Discusión</h1>
+    <p>¡Exploremos tus intereses y desafíos en visualización geoespacial!</p>
+    <ul>
+      <li>¿Con qué tipos de datos estás trabajando?</li>
+      <li>¿Qué herramientas estás usando actualmente?</li>
+      <li>¿Qué desafíos estás enfrentando?</li>
+      <li>¿Sobre qué te gustaría aprender más?</li>
+    </ul>
+    <notes>Este es un gran momento para involucrar a la audiencia y entender sus necesidades e intereses específicos. Adapta la discusión a sus antecedentes y objetivos.</notes>
+  </div>
+
+  <!-- Thank You -->
+  <div>
+    <h1>¡Gracias!</h1>
+    <p><em>Taller de Visualización de Datos Geoespaciales</em></p>
+    <p>Contacto: [Tu información de contacto]</p>
+    <p>Recursos: [Enlaces a materiales y herramientas]</p>
+    <notes>Gracias a todos por asistir y proporciona pasos claros para el aprendizaje continuo y la participación.</notes>
   </div>
 </body>
 </html>

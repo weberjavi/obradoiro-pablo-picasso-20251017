@@ -1,0 +1,27 @@
+{
+  "name": "obradoiro-pablo-picasso-20251017",
+  "version": "1.0.0",
+  "description": "Taller de Visualización de Datos Geoespaciales - Demo y Presentación",
+  "scripts": {
+    "dev": "cd demo && yarn dev",
+    "build": "cd demo && yarn build",
+    "deploy": "node deploy-simple.js",
+    "deploy:demo": "cd demo && yarn deploy",
+    "deploy:slides": "cd slides && npx gh-pages -d . -b gh-pages",
+    "install:demo": "cd demo && yarn install",
+    "preview": "cd demo && yarn preview"
+  },
+  "keywords": [
+    "geospatial",
+    "visualization",
+    "maps",
+    "data-viz",
+    "workshop",
+    "presentation"
+  ],
+  "author": "Pablo Picasso Workshop",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
