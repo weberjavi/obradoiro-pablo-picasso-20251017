@@ -1,13 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import styles from "./map.module.css";
 import { Layer, Map, Source, Popup } from "react-map-gl/maplibre";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Protocol } from "pmtiles";
 import "./index.css";
+import YearSlider from "./YearSlider";
+import debounce from "lodash.debounce";
 
 export default function App() {
   const [hoveredFeature, setHoveredFeature] = useState<{ year: number, latitude: number, longitude: number } | null>(null);
+  const [yearRange, setYearRange] = useState<{ min: number; max: number }>({ min: 1800, max: 2020 });
+  const [debouncedYearRange, setDebouncedYearRange] = useState<{ min: number; max: number }>({ min: 1800, max: 2020 });
+
+  // Create debounced function using lodash
+  const debouncedSetYearRange = useMemo(
+    () => debounce((newRange: { min: number; max: number }) => {
+      setDebouncedYearRange(newRange);
+    }, 150),
+    []
+  );
   useEffect(() => {
     const protocol = new Protocol();
     maplibregl.addProtocol("pmtiles", protocol.tile);
@@ -15,6 +27,11 @@ export default function App() {
       maplibregl.removeProtocol("pmtiles");
     };
   }, []);
+
+  // Trigger debounced update when yearRange changes
+  useEffect(() => {
+    debouncedSetYearRange(yearRange);
+  }, [yearRange, debouncedSetYearRange]);
 
   const handleHover = (event: any) => {
     const feature = event.features?.length ? {
@@ -25,8 +42,19 @@ export default function App() {
     setHoveredFeature(feature);
   };
 
+  const handleYearRangeChange = (minYear: number, maxYear: number) => {
+    setYearRange({ min: minYear, max: maxYear });
+  };
+
   return (
     <div className={styles.mapContainer}>
+      <YearSlider
+        minYear={1800}
+        maxYear={2020}
+        currentMinYear={yearRange.min}
+        currentMaxYear={yearRange.max}
+        onYearChange={handleYearRangeChange}
+      />
       <Map
         initialViewState={{
           longitude: -73.95747,
@@ -48,6 +76,11 @@ export default function App() {
             type="fill"
             source="buildings"
             source-layer="data"
+            filter={[
+              "all",
+              [">=", ["to-number", ["get", "constructi"]], debouncedYearRange.min],
+              ["<=", ["to-number", ["get", "constructi"]], debouncedYearRange.max]
+            ]}
             paint={{
               "fill-color": [
                 "interpolate-hcl",

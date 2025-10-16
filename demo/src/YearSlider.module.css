@@ -1,0 +1,155 @@
+.sliderContainer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 300px;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sliderHeader h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.yearRange {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.yearRange.filtering {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.filteringIndicator {
+  color: #4CAF50;
+  font-size: 12px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.sliderRoot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.sliderTrack {
+  background: linear-gradient(
+    90deg,
+    #1D6996 0%,    /* 1800 - Early 19th century */
+    #0F8554 18.75%, /* 1825 - Erie Canal completed */
+    #EDAD08 37.5%,  /* 1918 - End of World War I */
+    #E17C05 56.25%, /* 1933 - Great Depression/New Deal */
+    #6F4070 75%,    /* 1960 */
+    #994E95 93.75%, /* 2001 - 9/11 attacks */
+    #f00 100%       /* 2020 */
+  );
+  position: relative;
+  flex-grow: 1;
+  border-radius: 2px;
+  height: 4px;
+}
+
+.sliderRange {
+  position: absolute;
+  background: transparent;
+  border-radius: 2px;
+  height: 100%;
+}
+
+.sliderThumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #1a1a1a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.sliderThumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.sliderThumb:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.sliderThumbMin {
+  background-color: white;
+}
+
+.sliderThumbMax {
+  background-color: white;
+}
+
+.yearLabels {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  font-weight: 500;
+  margin-top: 5px;
+  padding: 0 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sliderContainer {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    min-width: auto;
+    padding: 15px;
+  }
+  
+  .sliderHeader h3 {
+    font-size: 14px;
+  }
+  
+  .yearRange {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
