@@ -4,7 +4,6 @@ body {
   overflow: hidden;
 }
 
-
 em {
   background: linear-gradient(90deg, #fadb03 0%, #fb37a3 100%);
   -webkit-background-clip: text;
@@ -14,12 +13,11 @@ em {
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, #fadb03 0%, #fb37a3 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-
+  background: linear-gradient(90deg, #fadb03 0%, #fb37a3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .full-width {
@@ -28,43 +26,156 @@ em {
   height: 100% !important;
 }
 
+.big-text {
+  font-size: 168em;
+  display: block;
+}
 .background-image {
   background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 50vw;
-    background-position: center;
-    background-position-x: -100%;
-    background-size: cover; 
+  width: 50vw !important;
+  height: 100%;
+  position: absolute;
+  left: 50vw;
+  background-position-x: 75%;
+  background-size: cover;
+}
+
+.binned-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 10%,
+    #fadb03 40%,
+    #88fd03 100%
+  );
+}
+
+/* Gradient 1: Red with changing luminance from high to low */
+.background-gradient-red-luminance {
+  background: linear-gradient(
+    90deg,
+    #ffcccc 0%,
+    /* light red */ #ff6666 25%,
+    /* lighter red */ #ff0000 50%,
+    /* normal red */ #c00000 75%,
+    /* darker red */ #800000 100% /* darkest red */
+  );
+}
+
+/* Gradient 2: Red to blue with white in the middle */
+.background-gradient-red-white-blue {
+  background: linear-gradient(90deg, #ff0000 0%, #ffffff 50%, #0000ff 100%);
+}
+
+/* Gradient 3: Hard cuts in red with seven bins, luminance changes */
+.background-binned-red-luminance {
+  background: linear-gradient(
+    90deg,
+    #ffe6e6 0%,
+    #ffe6e6 14.2857%,
+    #ffb3b3 14.2857%,
+    #ffb3b3 28.5714%,
+    #ff8080 28.5714%,
+    #ff8080 42.8571%,
+    #ff4d4d 42.8571%,
+    #ff4d4d 57.1428%,
+    #ff1a1a 57.1428%,
+    #ff1a1a 71.4285%,
+    #b30000 71.4285%,
+    #b30000 100%
+  );
+}
+
+/* Gradient 4: Binned red to blue with white in the middle, hard cuts */
+.background-binned-red-white-blue {
+  background: linear-gradient(
+    90deg,
+    #b30000 0%,
+    #b30000 14.2857%,
+    #ff1a1a 14.2857%,
+    #ff1a1a 28.5714%,
+    #ff4d4d 28.5714%,
+    #ff4d4d 42.8571%,
+    #ffffff 42.8571%,
+    #ffffff 57.1428%,
+    #4d79ff 57.1428%,
+    #4d79ff 71.4285%,
+    #1a53ff 71.4285%,
+    #1a53ff 85.7142%,
+    #0000b3 85.7142%
+  );
+}
+
+/* Gradient 5: Binned with five different colors */
+.background-binned-five-colors {
+  background: linear-gradient(
+    90deg,
+    #ff0000 0%,
+    /* red */ #ff0000 20%,
+    #fadb03 20%,
+    /* yellow */ #fadb03 40%,
+    #2ecc40 40%,
+    /* green */ #2ecc40 60%,
+    #2e86ab 60%,
+    /* blue */ #2e86ab 80%,
+    #a23b72 80%,
+    /* purple */ #a23b72 100%
+  );
+}
+
+.color-boxes {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.color-box {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  margin: 0;
+  /* gap handled by parent */
+  /* ensure stretch */
+  align-self: stretch;
 }
 
 .image-tile-sets {
   width: 50vw !important;
-    height: 58vh !important;
-    background-size: contain !important;
-    top: 0vh !important;
+  height: 58vh !important;
+  background-size: contain !important;
+  top: 0vh !important;
 }
 
 .heads-projection {
-  background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 50vw;
-    /* background-position: center; */
-    /* background-position-x: 7073%; */
-    background-size: contain;
-    overflow: hidden;
+  align-self: stretch;
+  width: 50vw !important;
+  height: 50vh !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
 }
-
-
 .image-projection {
   position: absolute;
   left: 50vw;
   width: 50vw !important;
   top: 50vh !important;
   height: 50vh !important;
+}
+
+.tiles {
+  position: absolute;
+  left: 50vw;
+  width: 50vw !important;
+  top: 50vh !important;
+  height: 50vh !important;
+  background-position-y: 45%;
+}
+
+.tilesets {
+  position: absolute;
+  left: 50vw;
+  width: 50vw !important;
+  top: 0 !important;
+  height: 48vh !important;
+  background-size: cover !important;
 }
 
 a {
@@ -91,7 +202,7 @@ a:hover {
   width: 100vw;
 }
 
-/* .slide-container {
+.slide-container {
   width: 100% !important;
   height: 100vh;
-} */
+}
