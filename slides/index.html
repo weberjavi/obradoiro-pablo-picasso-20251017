@@ -5,8 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <title>Taller de Visualización de Datos Geoespaciales</title>
   <link href="big.css" rel="stylesheet" type="text/css" />
+  <link href="themes/dark.css" rel="stylesheet" type="text/css" />
   <script src="big.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
   <style>
+    /* body { font-family: 'BBH Sans Hegarty', sans-serif; } */
+    body { font-family: 'Archivo Black', sans-serif;font-weight: 400;
+    font-style: normal; }
     .highlight { color: #2E86AB; }
     .accent { color: #A23B72; }
     .success { color: #F18F01; }
@@ -16,15 +25,62 @@
     .column { flex: 1; padding: 0 10px; }
   </style>
 </head>
-<body class="light">
+<body class="dark">
   <!-- Title Slide -->
-  <div>
-    <h1>Visualización de Datos Geoespaciales</h1>
-    <h2>Aplicaciones y Principios de Diseño</h2>
-    <p><em>Taller para Egresados de la Escuela de Diseño</em></p>
-    <notes>¡Bienvenidos! Hoy exploraremos cómo la visualización de datos geoespaciales combina principios de diseño con información geográfica para crear historias visuales convincentes e informativas.</notes>
+  <div style="padding: 30px">
+    CARTOGRAFÍA
+    DIGITAL
+    INTERACTIVA
+    <notes></notes>
   </div>
 
+
+  <div class="layout full-width" style='grid-template-columns: 50% 50%;'>
+    <div style="align-items: start; padding: 30px">
+      ARQUEOLOGÍA
+      OPEN DATA
+      CODIGO LIBRE
+   </div>
+    <img style= "background-image: url('./castro-dither-blue.jpg');" class="background-image" />
+  </div>
+
+
+  <div>
+    <span class="">DATOS</span>
+    <span class="gradient-text">COLORES</span>
+    <span>TESELAS</span>
+    <span class="">GEOMETRÍAS</span>
+    <notes></notes>
+  </div>
+
+  <div class="layout full-width" style='grid-template-columns: 50% 50%;'>
+    <div style="align-items: start; padding: 30px">
+      DATOS
+   </div>
+    <img style= "background-image: url('./castro-dither-blue.jpg');" class="background-image" />
+  </div>
+
+  <div class="layout full-width" style='grid-template-columns: 50% 50%;'>
+    <div style="align-items: start; padding: 30px">
+      COLORES
+   </div>
+    <img style= "background-image: url('./castro-dither-blue.jpg');" class="background-image" />
+  </div>
+
+  <div class="layout full-width" style='grid-template-columns: 50% 50%;'>
+    <div style="align-items: start; padding: 30px">
+      TESELAS
+   </div>
+    <img style= "background-image: url('./tile-sets.png');" class="background-image image-tile-sets" />
+    <img style= "background-image: url('./proj.png');" class="background-image image-projection" />
+  </div>
+
+  <div class="layout full-width" style='grid-template-columns: 50% 50%;'>
+    <div style="align-items: start; padding: 30px">
+      GEOMETRÍAS
+   </div>
+    <img style= "background-image: url('./castro-dither-blue.jpg');" class="background-image" />
+  </div>
   <!-- What is Geospatial Data? -->
   <div>
     <h1>¿Qué son los Datos Geoespaciales?</h1>
